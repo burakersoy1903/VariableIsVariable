@@ -1,10 +1,18 @@
-""" 
-Training
-https://www.youtube.com/watch?v=7utwZYKweho
-9:41 - Strings
-17:06 - Math
-https://www.w3schools.com/python/python_comments.asp
-"""
+########################################################
+#TRAINING
+#https://www.youtube.com/watch?v=7utwZYKweho
+#9:41 - Strings
+#17:06 - Math
+#22:55 - Variables and Methods
+#COMMENTING
+#Hmmm.. Using multi-line strings (or docstrings) for commenting? Not sure yet!
+#https://www.w3schools.com/python/python_comments.asp
+#w3schools does not really covers the docstrings
+#DOCSTRINGS
+#https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
+#https://google.github.io/styleguide/pyguide.html
+#https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
+########################################################
 
 print('\n')
 #STRINGS
