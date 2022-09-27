@@ -4,6 +4,10 @@
 #9:41 - Strings
 #17:06 - Math
 #22:55 - Variables and Methods
+#33:16 - Functions
+#42:18 - Boolean Expressions and Relational Operators
+#50:56 - Conditional Statements
+#57:58 - Lists
 #COMMENTING
 #Hmmm.. Using multi-line strings (or docstrings) for commenting? Not sure yet!
 #https://www.w3schools.com/python/python_comments.asp
@@ -14,7 +18,8 @@
 #https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
 ########################################################
 
-print('\n')
+
+print("\n" + "### Strings ###" + "\n")
 #STRINGS
 #Comments
 #Let's develop first program
@@ -24,8 +29,8 @@ multiple lines!""") #triple quote for multi-line
 print("This string is "+"awesome!") #We can also concatenate
 #print('\n') #new line
 print("Test that new line out")
-
-print('\n')
+########################################################
+print("\n" + "### Math ###" + "\n")
 #MATH
 print(50+50) #add
 print(50-50) #substract
@@ -36,8 +41,8 @@ print(50**2) #exponents
 print(50%6) #modulo - takes what is left over
 print(50/6) #divisin with remainder (or a float)
 print(50//6) #no remainder
-
-print('\n')
+########################################################
+print("\n" + "### Variables and Methods ###" + "\n")
 #VARIABLES AND METHODS
 quote = "All is fair in love and war."
 print(quote)
@@ -58,6 +63,70 @@ print(age)
 birthday = 1
 age += birthday
 print(age)
-
-print('\n')
+########################################################
+print("\n" + "### Functions ###" + "\n")
 #FUNCTIONS
+def who_am_i(): #this is a function without parameters
+    name = "Burak" #local variable
+    age = 46
+    print("My name is " + name + " and I am " + str(age) + " years old.")
+who_am_i()
+#print(age) #the variable in the fucntion is local
+def add_one_hundred(num):
+    print(num + 100)
+add_one_hundred(100)
+def add(x,y):
+    print(x + y)
+add(7,7)
+def multiply(x,y):
+    return x * y
+print(multiply(7,7))
+def square_root(x):
+    print(x ** .5)
+square_root(64)
+def nl(): #let's create our new line function
+    return("\n")
+########################################################
+print(nl() + "### Boolean Expressions and Relational Operators ###" + nl()) #True or False
+bool1 = True
+bool2 = 3*3 == 9
+bool3 = False
+bool4 = 3*3 != 9
+print(bool1,bool2,bool3,bool4)
+print(type(bool1))
+bool5 = "True"
+print(type(bool5))
+greater_than = 7 > 5
+less_than = 5 < 7
+greater_than_equal_to = 7 >= 7
+less_than_equal_to = 7 <= 7
+test_and = (7 > 5) and (5 < 7) #True
+test_and2 = (7> 5) and (5 > 7) #False
+test_or = (7 > 5) or (5 < 7) #True
+test_or2 = (7 > 5) or (5 > 7) #True
+test_not = not True #False
+#Google Python Truth Table
+########################################################
+print(nl() + "### Conditional Statements ###" + nl()) #if/then/else
+def drink(money):
+    if money >= 2:
+        return "You've got yourself a drink!"
+    else:
+        return "No drink for you!"
+print(drink(3))
+print(drink(1))
+def alcohol(age,money):
+    if (age >= 21) and (money >= 5):
+        return "We're getting a drink!"
+    elif (age >= 21) and (money < 5):
+        return "Come back with more money."
+    elif (age < 21) and (money >= 5):
+        return "Nice try, kid!"
+    else:
+        return "You're too young and too poor."
+print(alcohol(21,5))
+print(alcohol(21,4))
+print(alcohol(20,5))
+print(alcohol(20,4))
+########################################################
+print(nl() + "### Lists ###" + nl()) #if/then/else
