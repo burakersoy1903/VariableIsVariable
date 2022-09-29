@@ -9,6 +9,9 @@
 # 50:56 - Conditional Statements
 # 57:58 - Lists
 # 1:10:15 - Tuples
+# 1:12:30 - Looping
+# 1:17:03 - Advanced Strings
+# 1:29:47 - Dictionaries
 # COMMENTING
 # Hmmm.. Using multi-line strings (or docstrings) for commenting? Not sure yet!
 # https://www.w3schools.com/python/python_comments.asp
@@ -20,8 +23,8 @@
 ########################################################
 
 
+########################################################
 print("\n" + "### Strings ###" + "\n")
-#comments
 #let's develop first program
 print("Hello, world!")
 print("""This string runs
@@ -31,7 +34,6 @@ print("This string is "+"awesome!") #we can also concatenate
 print("Test that new line out")
 ########################################################
 print("\n" + "### Math ###" + "\n")
-#MATH
 print(50+50) #add
 print(50-50) #substract
 print(50*50) #multiply
@@ -43,20 +45,19 @@ print(50/6) #divisin with remainder (or a float)
 print(50//6) #no remainder
 ########################################################
 print("\n" + "### Variables and Methods ###" + "\n")
-#VARIABLES AND METHODS
 quote = "All is fair in love and war."
 print(quote)
 print(quote.upper()) #uppercase
 print(quote.lower()) #lowercase
-print(quote.title()) #title case --Like a title
-print(len(quote)) #counts characters #Do not forget space is a character
+print(quote.title()) #title case - like a title
+print(len(quote)) #counts characters - do not forget space is a character
 name = "Burak" #string
 age = 36 #int
-gpa = 3.7 #float #has a decimal
+gpa = 3.7 #float - has a decimal
 print(int(age))
 print(int(30.1))
 print(int(30.9)) #will it round? No.
-#print("My name is " + name + " and I am " + age + " years old.") #check line #Google the "TypeError:"
+#print("My name is " + name + " and I am " + age + " years old.") #check line - google the "TypeError:"
 print("My name is " + name + " and I am " + str(age) + " years old.")
 age += 1
 print(age)
@@ -65,13 +66,12 @@ age += birthday
 print(age)
 ########################################################
 print("\n" + "### Functions ###" + "\n")
-#FUNCTIONS
 def who_am_i(): #this is a function without parameters
     name = "Burak" #local variable
     age = 46
     print("My name is " + name + " and I am " + str(age) + " years old.")
 who_am_i()
-#print(age) #the variable in the fucntion is local
+#print(age) - the variable in the function is local
 def add_one_hundred(num):
     print(num + 100)
 add_one_hundred(100)
@@ -150,9 +150,66 @@ movies2 = ["Avengers: Infinity War", "Avengers: Endgame"]
 movies_combined = movies + movies2
 print(movies_combined)
 grades = [["Bob", 82], ["Alice", 90], ["Jeff", 73]] #2 dimensional list
-bobs_grade = grades[0][1] #Index 0 --> ["Bob, 82"] #Second item --> 82
+bobs_grade = grades[0][1] #Index 0 --> ["Bob, 82"] - Second item --> 82
 print(bobs_grade)
 grades[0][1] = 83
 print(grades)
 ########################################################
-print(nl() + "### Tuples ###" + nl())
+print(nl() + "### Tuples ###" + nl()) #lists do not change and wotk with () #immutable
+letter_grades = ("a", "b", "c", "d", "f")
+print(letter_grades[1])
+#letter_grades.pop --> AttributeError: 'tuple' object has no attribute 'pop'
+########################################################
+print(nl() + "### Looping ###" + nl())
+#for loops - start to finish of an iterate
+#ping all the 192.168.1.1-254 - use for loop maybe
+vegetables = ["cucumber", "spinach", "cabbage"]
+for x in vegetables:
+    print(x)
+#while loops - execute as long as True
+i = 1
+while i < 10:
+    print(i)
+    i += 1
+########################################################
+print(nl() + "### Advanced Strings ###" + nl())
+my_name = "Burak" #strings are immutable
+print(my_name[0]) #first letter
+print(my_name[-1]) #last letter
+sentence = "This is a sentence."
+print(sentence[:4])
+print(sentence.split()) #delimeter - deafult is space
+sentence_split = sentence.split() #split the sentence in to words
+sentence_join = " ".join(sentence_split) #join them with having space character as delimeter
+print(sentence_join)
+quote = "He said, 'give me all your money'"
+#quote = 'He said, "give me all your money"' #alternative
+print(quote)
+quote = "He said, \"give me all your money\"" #character escaping
+print(quote)
+too_much_space = "                                                       hello                  "
+print(too_much_space)
+print(too_much_space.strip()) #eliminates the space characters
+print("A" in "Apple") #returns True
+print("a" in "Apple") #returns False - case sensitivity
+letter = "A"
+word = "Apple"
+print(letter.lower() in word.lower()) #impored way of doing this - Manhattan vs. MaNhaTTan
+movie = "V for Vendetta"
+print("My favorite movie is " + movie +".")
+print("My favorite movie is {}.".format(movie)) #using the String format method
+print("My favorite movie is %s." % movie) #percent formatting
+print(f"My favorite movie is {movie}.") #f string literal - latest and greatest way of doing it in Python 3
+########################################################
+print(nl() + "### Dictionaries ###" + nl()) #key/value pairs {}
+drinks = {"White Russian": 7, "Old Fashioned": 10, "Lemon Drop": 8} #drink is the key, price is the value
+print(drinks)
+employees = {"Finance": ["Bob", "Linda", "Tina"], "IT": ["Gene", "Louise", "Teddy"], "HR": ["Jimmy Jr.", "Mort"]}
+print(employees)
+employees["Legal"] = ["Mr. Frond"] #adds new key/value pair - appends to the end
+print(employees)
+employees.update({"Sales": ["Andie", "Ollie"]}) #adds new key/value pair as well
+print(employees)
+drinks["White Russian"] = 8
+print(drinks)
+print(drinks.get("White Russian"))
