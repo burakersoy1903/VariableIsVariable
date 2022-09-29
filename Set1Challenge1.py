@@ -1,6 +1,6 @@
 ########################################################
-#This is why we are here
-#https://cryptopals.com/sets/1/challenges/1
+# This is why we are here
+# https://cryptopals.com/sets/1/challenges/1
 
 # Well let's learn before we implement
 # https://stackabuse.com/encoding-and-decoding-base64-strings-in-python/
@@ -8,13 +8,17 @@
 # The truth --> "The ASCII values of the characters P, y, t, h, o, n are 80, 121, 116, 104, 111, 110 respectively"
 
 # Well let's learn before we implement
+# https://www.youtube.com/c/nccgroup/videos
 # https://youtu.be/Yg1ZWegeZiM
 
-#https://docs.python.org/3/library/base64.html
+# Further reading:
+# https://docs.python.org/3/library/base64.html
+# https://docs.python.org/3/reference/import.html
 
-#Research RFC 4648
+# Research RFC 4648
+# https://www.ietf.org/rfc/rfc4648.txt
 
-#See below for some fun exercises & documentation
+# See below for some fun exercises & documentation
 ########################################################
 
 #You'll need to use this code for the rest of the exercises. Encapsulate it, baby, into a function that we could reuse
@@ -32,7 +36,7 @@ if __name__ == "__main__":
 
     print(f"{data_hex = }")
     print(f"{data_b64 = }")
-    
+
     #Let's check if our result is correct from challenge 1
     if data_b64 == b"SSdtIGtpbGxpbmcgeW91ciBicmFpbiBsaWtlIGEgcG9pc29ub3VzIG11c2hyb29t":
         print("It worked!")
