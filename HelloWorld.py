@@ -1,32 +1,32 @@
 ########################################################
-#TRAINING
-#https://www.youtube.com/watch?v=7utwZYKweho
-#9:41 - Strings
-#17:06 - Math
-#22:55 - Variables and Methods
-#33:16 - Functions
-#42:18 - Boolean Expressions and Relational Operators
-#50:56 - Conditional Statements
-#57:58 - Lists
-#COMMENTING
-#Hmmm.. Using multi-line strings (or docstrings) for commenting? Not sure yet!
-#https://www.w3schools.com/python/python_comments.asp
-#w3schools does not really covers the docstrings
-#DOCSTRINGS
-#https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
-#https://google.github.io/styleguide/pyguide.html
-#https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
+# TRAINING
+# https://www.youtube.com/watch?v=7utwZYKweho
+# 9:41 - Strings
+# 17:06 - Math
+# 22:55 - Variables and Methods
+# 33:16 - Functions
+# 42:18 - Boolean Expressions and Relational Operators
+# 50:56 - Conditional Statements
+# 57:58 - Lists
+# 1:10:15 - Tuples
+# COMMENTING
+# Hmmm.. Using multi-line strings (or docstrings) for commenting? Not sure yet!
+# https://www.w3schools.com/python/python_comments.asp
+# w3schools does not really covers the docstrings
+# DOCSTRINGS
+# https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
+# https://google.github.io/styleguide/pyguide.html
+# https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
 ########################################################
 
 
 print("\n" + "### Strings ###" + "\n")
-#STRINGS
-#Comments
-#Let's develop first program
+#comments
+#let's develop first program
 print("Hello, world!")
 print("""This string runs
 multiple lines!""") #triple quote for multi-line
-print("This string is "+"awesome!") #We can also concatenate
+print("This string is "+"awesome!") #we can also concatenate
 #print('\n') #new line
 print("Test that new line out")
 ########################################################
@@ -55,8 +55,8 @@ age = 36 #int
 gpa = 3.7 #float #has a decimal
 print(int(age))
 print(int(30.1))
-print(int(30.9)) #Will it round? No.
-#print("My name is " + name + " and I am " + age + " years old.") #Check line #Google the "TypeError:"
+print(int(30.9)) #will it round? No.
+#print("My name is " + name + " and I am " + age + " years old.") #check line #Google the "TypeError:"
 print("My name is " + name + " and I am " + str(age) + " years old.")
 age += 1
 print(age)
@@ -87,7 +87,7 @@ square_root(64)
 def nl(): #let's create our new line function
     return("\n")
 ########################################################
-print(nl() + "### Boolean Expressions and Relational Operators ###" + nl()) #True or False
+print(nl() + "### Boolean Expressions and Relational Operators ###" + nl()) #true or false
 bool1 = True
 bool2 = 3*3 == 9
 bool3 = False
@@ -105,7 +105,7 @@ test_and2 = (7> 5) and (5 > 7) #False
 test_or = (7 > 5) or (5 < 7) #True
 test_or2 = (7 > 5) or (5 > 7) #True
 test_not = not True #False
-#Google Python Truth Table
+#google Python Truth Table
 ########################################################
 print(nl() + "### Conditional Statements ###" + nl()) #if/then/else
 def drink(money):
@@ -129,4 +129,30 @@ print(alcohol(21,4))
 print(alcohol(20,5))
 print(alcohol(20,4))
 ########################################################
-print(nl() + "### Lists ###" + nl()) #if/then/else
+print(nl() + "### Lists ###" + nl()) #have brackets [] and they have items
+movies = ["V for Vendetta", "Law Abiding Citizen", "Batman Begins", "Thor: Ragnarok"]
+print(movies[1]) #calling an index #It actually starts with 0 #Returns the second item
+print(movies[0]) #returns the first item
+print(movies[1:3]) #return the first index number given right until the last number, but not include the last number
+print(movies[1:]) #return everything begining of index number given
+print(movies[:1]) #return everything up until the index number given
+print(movies[-1]) #return last item in list
+print(len(movies)) #count items in the list
+movies.append("Iron Man") #appends to the end of the list
+print(movies)
+movies.insert(2, "The Last Samurai") #insert object before index 
+print(movies)
+movies.pop() #removes the last item
+print(movies)
+movies.pop(0) #removes the first item
+print(movies)
+movies2 = ["Avengers: Infinity War", "Avengers: Endgame"]
+movies_combined = movies + movies2
+print(movies_combined)
+grades = [["Bob", 82], ["Alice", 90], ["Jeff", 73]] #2 dimensional list
+bobs_grade = grades[0][1] #Index 0 --> ["Bob, 82"] #Second item --> 82
+print(bobs_grade)
+grades[0][1] = 83
+print(grades)
+########################################################
+print(nl() + "### Tuples ###" + nl())
