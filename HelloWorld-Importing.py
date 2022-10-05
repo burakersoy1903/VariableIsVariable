@@ -2,6 +2,7 @@
 # TRAINING
 # https://www.youtube.com/watch?v=7utwZYKweho
 # 1:36:15 - Importing Modules
+# See below for some fun exercises & documentation
 ########################################################
 
 

@@ -20,6 +20,7 @@
 # https://sphinxcontrib-napoleon.readthedocs.io/en/latest/example_google.html
 # https://google.github.io/styleguide/pyguide.html
 # https://marketplace.visualstudio.com/items?itemName=njpwerner.autodocstring
+# See below for some fun exercises & documentation
 ########################################################
 
 
