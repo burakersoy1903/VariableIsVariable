@@ -7,13 +7,41 @@
 # https://youtu.be/PeCTdtgRhVg
 
 # Further reading:
+# https://docs.python.org/3/library/functions.html#zip
+# https://www.w3schools.com/python/ref_func_zip.asp#:~:text=The%20zip()%20function%20returns,iterator%20are%20paired%20together%20etc.
+# https://docs.python.org/3/library/timeit.html
+# https://www.geeksforgeeks.org/timeit-python-examples/
 
 # See below for some fun exercises & documentation
 ########################################################
 
+a = bytes.fromhex("1c0111001f010100061a024b53535009181c")
+b = bytes.fromhex("686974207468652062756c6c277320657965")
 
 
 ########################################################
-###
-
+###Let's benchmark different methods
+import timeit
+#code snippet to be executed only once
+mysetup = ""
+#code snippet whose execution time is to be measured
+mycode = '''
+def iter_1(a,b):
+    for i in range(min(len(a), len(b))):
+        a[i], b[i]
+'''
+#timeit statement
+print (timeit.timeit(setup = mysetup,
+                     stmt = mycode,
+                     number = 10000)) #the execution time(in seconds) for 10000 iterations of the code snippet
+#code snippet whose execution time is to be measured
+mycode = '''
+def iter_2(a,b):
+    for byte_1, byte_2 in zip(a,b):
+        byte_1, byte_2
+'''
+#timeit statement
+print (timeit.timeit(setup = mysetup,
+                     stmt = mycode,
+                     number = 10000)) #the execution time(in seconds) for 10000 iterations of the code snippet
 ########################################################
